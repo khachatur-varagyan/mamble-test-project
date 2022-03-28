@@ -1,19 +1,43 @@
-import {useRef, useState} from "react";
+import {useState} from "react";
+import './TodoForm.css';
 
-function Form(){
+function TodoForm({onAdd}){
     const [text, setText]=useState("");
-    const onChangeRef=useRef("")
+
     const handleOnChange=(e)=>{
-        console.log(onChangeRef.current.value)
+        setText(e.target.value);
+    }
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        if(!text || text.length>54) return
+        onAdd(text)
+        setText("")
     }
     return(
         <div>
-            <h2>{onChangeRef.current}</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="container">
+                    <label>Task</label>
+                    <div className="row">
+                        <div className="col-md-9">
+                            <input type="text"
+                                   value={text}
+                                   onChange={handleOnChange}
+                                   placeholder="Write here"
+                                   className={text.length>54?'error':''}
+                            />
+                            {text.length>54?<span>Task content can contain max 54 characters.</span>:''}
+                        </div>
+                        <div className="col-md-2">
+                            <button>Add</button>
+                        </div>
+                        <div className="col-md-1"></div>
+                    </div>
+                </div>
 
-                <input type="text" ref={onChangeRef} />
-                <button onClick={handleOnChange}>Add</button>
 
+            </form>
         </div>
     )
 }
-export default Form
+export default TodoForm

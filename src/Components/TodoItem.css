@@ -1,0 +1,32 @@
+.itemBox{
+    height: 72px;
+}
+.itemBox:hover{
+    background-color: rgba(243, 242, 242, 0.58);
+}
+/*input[type=checkbox]{*/
+/*    background-color: #008594;*/
+/*}*/
+
+.checkBox,.btnBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.itemRow{
+    height: 100%;
+}
+.textBox{
+    font-family:Poppins;
+    font-size:18px;
+    height: 100%;
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+.btnDelete{
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    color:#174348;
+}

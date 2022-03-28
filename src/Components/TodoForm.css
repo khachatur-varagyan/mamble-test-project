@@ -1,0 +1,49 @@
+form input{
+    border:1px solid #FFCD04;
+    height: 52px;
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form button{
+    color:#FFFFFF;
+    font-family: Poppins;
+    font-size: 18px;
+    background-color: #008594;
+    border: none;
+    height: 50px;
+    width: 98px;
+    border-radius: 4px;
+}
+form input:focus {
+    outline: none !important;
+    border:2px solid #FFCD04;
+}
+
+form button:hover {
+    border: 3px solid #6820e5;
+    height: 52px;
+    width: 100px;
+}
+label{
+    color: #174348;
+    font-family: Poppins;
+    font-size: 18px;
+}
+.error{
+    border: 2px solid #FF3104;
+}
+.error:focus{
+    border: 2px solid #FF3104;
+}
+form span{
+    color: #FF3104;
+}
+
+
+@media only screen and (max-width: 800px) {
+    form button {
+       float: right;
+    }
+}
