@@ -52,15 +52,15 @@ function App() {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-md-12 header">
-                    <div className="row">
-                        <div className="col-md-6">
-                            {modal?<Modal closeModal={setModal} onDelete={onDelete}/>:''}
-                        </div>
-                        <div className="col-md-2"></div>
-                        <div className="col-md-4">
-                            <HideChackbox hiddenState={setHidden}/>
-                        </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <HideChackbox hiddenState={setHidden}/>
                     </div>
+                </div>
+                <div className="col-md-12">
+                    {modal?<Modal closeModal={setModal} onDelete={onDelete}/>:''}
                 </div>
                 <div className="col-md-12">
                     <TodoForm onAdd={onAdd}/>

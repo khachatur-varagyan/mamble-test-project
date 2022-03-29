@@ -4,6 +4,13 @@
 .header{
     margin-top: 150px;
 }
+.header{
+    display: flex;
+    flex-grow: 1;
+}
+.header div{
+    flex-grow: 1;
+}
 .itemsBox{
     margin-top: 40px;
 }

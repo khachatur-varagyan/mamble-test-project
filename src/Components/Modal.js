@@ -15,7 +15,6 @@ function Modal({closeModal, onDelete}) {
                     }}>yes</button>
                     <button style={{marginLeft:"10px"}} onClick={()=>{closeModal(false)}}>no</button>
                 </div>
-
             </div>
         </div>
     )

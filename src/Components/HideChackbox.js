@@ -3,7 +3,7 @@ function HideChackbox({hiddenState}) {
         hiddenState(e.target.checked)
     }
     return(
-        <div>
+        <div >
             <input type="checkbox" onChange={handleHiddenElement}/>
             <label style={{marginLeft:"10px"}}>Hode completed</label>
         </div>
