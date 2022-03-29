@@ -24,6 +24,9 @@
     display: flex;
     align-items: center;
 }
+.hiddenText{
+    color:#ACACAC;
+}
 .btnDelete{
     cursor: pointer;
     font-size: 25px;

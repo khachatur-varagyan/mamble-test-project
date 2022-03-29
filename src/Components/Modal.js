@@ -1,7 +1,7 @@
 import './Modal.css';
 import {useState} from "react";
 
-function Modal({closeModel}) {
+function Modal({closeModal, onDelete}) {
     return (
         <div className="modalMessage">
             <div>
@@ -9,8 +9,11 @@ function Modal({closeModel}) {
                     <p>Are you sour you want to delete?</p>
                 </div>
                 <div className="btnMessage">
-                    <button onClick={()=>{closeModel(true)}}>yes</button>
-                    <button style={{marginLeft:"10px"}} onClick={()=>{closeModel(false)}}>no</button>
+                    <button onClick={()=>{
+                        onDelete(true)
+                        closeModal(false)
+                    }}>yes</button>
+                    <button style={{marginLeft:"10px"}} onClick={()=>{closeModal(false)}}>no</button>
                 </div>
 
             </div>

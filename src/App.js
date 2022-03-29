@@ -3,10 +3,16 @@ import TodoForm from './Components/TodoForm';
 import {useEffect, useState} from "react";
 import TodoItems from "./Components/TodoItems";
 import Modal from "./Components/Modal";
+import HideChackbox from "./Components/HideChackbox";
 
 function App() {
     const [todos,setTodos]=useState([]);
     const [modal,setModal]=useState(false);
+    const [hidden,setHidden]=useState(false);
+    const [success,setSuccess]=useState([{
+        show:false,
+        itemId:''
+    }]);
 
     useEffect(()=>{
         if(todos){
@@ -31,28 +37,40 @@ function App() {
         })
         setTodos(newTodos)
     }
+    const onSuccess=(newSuccessObj)=>{
+        setSuccess(newSuccessObj)
+    }
+
     const onDelete=(item)=>{
-        setModal(!modal)
-        if(item.isCompleted){
-            const newTodos=todos.filter((todo)=>todo.id!==item.id)
+        if(item){
+            const newTodos=todos.filter((todo)=>todo.id!==success.itemId)
             setTodos(newTodos)
         }
-
     }
   return (
     <div className="App">
         <div className="container-fluid">
             <div className="row">
                 <div className="col-md-12 header">
-                    {modal?<Modal closeModel={setModal}/>:''}
+                    <div className="row">
+                        <div className="col-md-6">
+                            {modal?<Modal closeModal={setModal} onDelete={onDelete}/>:''}
+                        </div>
+                        <div className="col-md-2"></div>
+                        <div className="col-md-4">
+                            <HideChackbox hiddenState={setHidden}/>
+                        </div>
+                    </div>
                 </div>
                 <div className="col-md-12">
                     <TodoForm onAdd={onAdd}/>
                 </div>
                 <div className="col-md-12 itemsBox">
                     <TodoItems items={todos}
-                               onDelete={onDelete}
+                               hiddenChange={hidden}
                                onChange={onChange}
+                               onSuccess={onSuccess}
+                               closeModal={setModal}
                     />
                 </div>
             </div>

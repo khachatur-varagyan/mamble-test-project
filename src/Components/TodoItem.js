@@ -1,7 +1,12 @@
 import './TodoItem.css'
-function TodoItem({item,onDelete,onChange}) {
-    const handleOnDelete=()=>{
-        onDelete(item)
+function TodoItem({item,onChange,onSuccess,closeModal}) {
+    const handleOnSuccess=()=>{
+        closeModal(item.isCompleted)
+        const newSuccessObj={
+            show:item.isCompleted,
+            itemId:item.id,
+        }
+        onSuccess(newSuccessObj)
     }
     const handleOnChange=(e)=>{
         const changeItem={
@@ -21,10 +26,10 @@ function TodoItem({item,onDelete,onChange}) {
                     />
                 </div>
                 <div className="col-md-8 textBox">
-                    <span>{item.text}</span>
+                    <span className={item.isCompleted ? "hiddenText":''}>{item.text}</span>
                 </div>
                 <div className="col-md-2 btnBox">
-                    <div onClick={handleOnDelete} className="btnDelete">&#215;</div>
+                    <div onClick={handleOnSuccess} className="btnDelete">&#215;</div>
                 </div>
 
             </div>
