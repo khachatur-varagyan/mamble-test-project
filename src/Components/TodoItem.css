@@ -12,6 +12,7 @@
 .checkBox,.btnBox{
     height: 100%;
     width: 5%;
+    border-bottom:1px solid #E5E5E5;
     display: flex;
     align-items: center;
 }
@@ -28,6 +29,7 @@
     height: 100%;
     width: 65%;
     color: #666666;
+    border-bottom:1px solid #E5E5E5;
     display: flex;
     align-items: center;
 }
