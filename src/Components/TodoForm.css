@@ -12,8 +12,8 @@ form button{
     font-size: 18px;
     background-color: #008594;
     border: none;
-    height: 50px;
-    width: 98px;
+    height: 52px;
+    width: 100px;
     border-radius: 4px;
 }
 form input:focus {
@@ -23,7 +23,6 @@ form input:focus {
 
 form button:hover {
     border: 3px solid #6820e5;
-    height: 52px;
     width: 100px;
 }
 label{
@@ -45,5 +44,11 @@ form span{
 @media only screen and (max-width: 800px) {
     form button {
        float: right;
+    }
+    form input{
+        height: 42px;
+    }
+    form button{
+        height: 42px;
     }
 }

@@ -4,7 +4,7 @@ function HideChackbox({hiddenState}) {
     }
     return(
         <div >
-            <input type="checkbox" onChange={handleHiddenElement}/>
+            <input type="checkbox"  onChange={handleHiddenElement}/>
             <label style={{marginLeft:"10px"}}>Hode completed</label>
         </div>
     )

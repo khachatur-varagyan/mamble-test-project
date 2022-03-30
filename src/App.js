@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import TodoItems from "./Components/TodoItems";
 import Modal from "./Components/Modal";
 import HideChackbox from "./Components/HideChackbox";
+import StartAdding from "./Components/StartAdding";
 
 function App() {
     const [todos,setTodos]=useState([]);
@@ -13,7 +14,6 @@ function App() {
         show:false,
         itemId:''
     }]);
-
     useEffect(()=>{
         if(todos){
             const data=JSON.parse(localStorage.getItem('data'))
@@ -66,12 +66,13 @@ function App() {
                     <TodoForm onAdd={onAdd}/>
                 </div>
                 <div className="col-md-12 itemsBox">
-                    <TodoItems items={todos}
-                               hiddenChange={hidden}
-                               onChange={onChange}
-                               onSuccess={onSuccess}
-                               closeModal={setModal}
-                    />
+                    {todos.length!==0?<TodoItems items={todos}
+                                                  hiddenChange={hidden}
+                                                  onChange={onChange}
+                                                  onSuccess={onSuccess}
+                                                  closeModal={setModal}
+                    />:<StartAdding/>}
+
                 </div>
             </div>
         </div>

@@ -20,6 +20,7 @@ function TodoItem({item,onChange,onSuccess,closeModal}) {
             <div className="emptyItemDiv"></div>
             <div className=" checkBox">
                 <input type="checkbox"
+                       className="bt"
                        onChange={handleOnChange}
                        checked={item.isCompleted}
                 />

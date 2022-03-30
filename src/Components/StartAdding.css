@@ -1,0 +1,22 @@
+.startFirst{
+    text-align: center;
+    font-size: 24px;
+    color: #ACACAC;
+    margin-top: 50px;
+}
+.startSecond{
+    font-size: 36px;
+    color: #666666;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .startFirst{
+        font-size: 15px;
+    }
+    .startSecond{
+        font-size: 20px;
+    }
+}
