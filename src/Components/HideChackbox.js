@@ -1,4 +1,6 @@
-function HideChackbox({hiddenState}) {
+import {memo} from "react";
+
+export default memo(function HideChackbox({hiddenState}) {
     const handleHiddenElement=(e)=>{
         hiddenState(e.target.checked)
     }
@@ -8,5 +10,4 @@ function HideChackbox({hiddenState}) {
             <label style={{marginLeft:"10px"}}>Hode completed</label>
         </div>
     )
-}
-export default HideChackbox
+})
